@@ -1,17 +1,10 @@
-/** Leason 01 */
-/*const great = (name) => {
-    console.log(`Hello! ${name}`);
-};
-
-great('azad');*/
-
 
 /** Leason 04 */
 
 const fs = require('fs');
 
 // reading files
-/*fs.readFile('./docs/blog.txt', (err, data) => {
+fs.readFile('./docs/blog.txt', (err, data) => {
     if(err) console.log(err);
     else console.log(data.toString());
 });
@@ -20,7 +13,7 @@ const fs = require('fs');
 fs.writeFile('./docs/blog1.txt', 'Azad Writing new file', () => {
     console.log('file was written');
 })
-*/
+
 // directories
 
 if(!fs.existsSync('./assets'))
@@ -30,3 +23,11 @@ if(!fs.existsSync('./assets'))
         else console.log('Folder is created');
     })
 }
+
+// deleting files
+if (fs.existsSync('./docs/deleteme.txt')) {
+    fs.unlink('./docs/deleteme.txt', err => {
+      if (err) console.log(err);
+      else console.log('file deleted');
+    });
+  }
